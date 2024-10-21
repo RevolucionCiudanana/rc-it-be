@@ -25,6 +25,7 @@ db.event = require("../models/event.model.js")(sequelize, Sequelize);
 db.country = require("../models/country.model.js")(sequelize, Sequelize);
 db.sector = require("../models/sector.model.js")(sequelize, Sequelize);
 db.profession = require("../models/profession.model.js")(sequelize, Sequelize);
+db.member = require("../models/member.model.js")(sequelize, Sequelize);
 
 UserRoles = sequelize.define("user_roles", {
   userId: Sequelize.STRING,

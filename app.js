@@ -333,6 +333,7 @@ require("./app/routes/email.routes")(app);
 require("./app/routes/event.routes")(app);
 require("./app/routes/sector.routes")(app);
 require("./app/routes/profession.routes")(app);
+require("./app/routes/member.routes")(app);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
