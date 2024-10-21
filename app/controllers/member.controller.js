@@ -1,5 +1,5 @@
 const db = require("../models");
-const Member = db.Member;
+const Member = db.member;
 const Op = db.Sequelize.Op;
 
 // Create a new member
@@ -12,6 +12,7 @@ exports.createMember = (req, res) => {
         sectorId,
         professionId,
         address,
+        birthdate,
         country,
         country_code,
         county,
@@ -32,6 +33,7 @@ exports.createMember = (req, res) => {
         sectorId,
         professionId,
         address,
+        birthdate,
         country,
         country_code,
         county,

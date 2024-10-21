@@ -17,14 +17,14 @@ module.exports = function (app) {
         controller.createMember
     );
 
-    // Route to delete a member by UUID (requires token verification)
+    // Route to delete a member by ID (requires token verification)
     app.delete(
         "/api/member/deleteMemberById/:id",
         [authJwt.verifyToken],
         controller.deleteMemberById
     );
 
-    // Route to get member details by UUID
+    // Route to get member details by ID
     app.get(
         "/api/member/getMemberById/id",
         controller.getMemberById
@@ -32,7 +32,7 @@ module.exports = function (app) {
 
     // Route to get all members
     app.get(
-        "/api/member/getAllMember",
+        "/api/member/getAllMembers",
         controller.getAllMembers
     );
 };

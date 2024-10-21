@@ -9,5 +9,7 @@ module.exports = function (app) {
         next();
     });
 
+    app.get("/api/profession/allProfessionsBySector", controller.allProfessionsBySector);
     app.get("/api/profession/allProfessions", controller.allProfessions);
+
 };

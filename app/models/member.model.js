@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-    const Member = sequelize.define("Member", {
+    const Member = sequelize.define("members", {
         id: {
             type: DataTypes.UUID,
             defaultValue: DataTypes.UUIDV4, // Automatically generates a unique UUID
@@ -23,6 +23,10 @@ module.exports = (sequelize, DataTypes) => {
         cellphone: {
             type: DataTypes.STRING,
             allowNull: false,
+        },
+        birthdate: {
+            type: DataTypes.DATEONLY, // Use DATEONLY for just the date
+            allowNull: true, // You can set to false if birthdate is mandatory
         },
         address: {
             type: DataTypes.TEXT, // Allows long text for addresses
