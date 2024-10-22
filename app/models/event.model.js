@@ -23,14 +23,8 @@ module.exports = (sequelize, Sequelize) => {
         endDateTime: {
             type: Sequelize.DATE, // Campo per la data e ora di fine
         },
-        type: {
+        category: {
             type: Sequelize.STRING, // Campo per la tipologia (in inglese)
-        },
-        organizer: {
-            type: Sequelize.STRING, // Campo per il nome dell'organizzatore
-        },
-        participants: {
-            type: Sequelize.JSON, // Campo per la lista di partecipanti
         },
         contactInfo: {
             type: Sequelize.STRING, // Campo per le informazioni di contatto
