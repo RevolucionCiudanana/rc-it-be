@@ -14,20 +14,16 @@ module.exports = function (app) {
         "/api/event/createEvent",
         controller.createEvent
     );
+
     app.delete(
-        "/api/event/deleteEventByUUID/:uuid",
+        "/api/event/deleteEventById/:id",
         [authJwt.verifyToken],
-        controller.deleteEventByUUID
-    )
-    app.post(
-        "/api/event/getEventsByEmail",
-        [authJwt.verifyToken],
-        controller.getEventsByEmail
+        controller.deleteEventById
     );
 
     app.get(
-        "/api/event/getEventByUUID/:uuid",
-        controller.getEventByUUID
+        "/api/event/getEventById/:id",
+        controller.getEventById
     );
 
     app.get(

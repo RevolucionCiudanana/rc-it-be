@@ -1,38 +1,45 @@
 module.exports = (sequelize, Sequelize) => {
     const Event = sequelize.define("events", {
-        uuid: {
+        id: {
             type: Sequelize.UUID,
             defaultValue: Sequelize.UUIDV4,
+            primaryKey: true, // Aggiunto per definire 'id' come chiave primaria
         },
-        name: {
-            type: Sequelize.STRING,
+        title: {
+            type: Sequelize.STRING, // Campo per il titolo dell'evento
         },
-        description: {
-            type: Sequelize.STRING,
+        shortDescription: {
+            type: Sequelize.STRING, // Campo per la descrizione breve
         },
         date: {
-            type: Sequelize.DATE,
+            type: Sequelize.DATE, // Campo per la data dell'evento
         },
         location: {
-            type: Sequelize.STRING,
+            type: Sequelize.STRING, // Campo per il luogo dell'evento
         },
-        email: {
-            type: Sequelize.STRING,
+        startDateTime: {
+            type: Sequelize.DATE, // Campo per la data e ora di inizio
         },
-        price: {
-            type: Sequelize.FLOAT,
+        endDateTime: {
+            type: Sequelize.DATE, // Campo per la data e ora di fine
         },
-        capacity: {
-            type: Sequelize.INTEGER,
+        type: {
+            type: Sequelize.STRING, // Campo per la tipologia (in inglese)
+        },
+        organizer: {
+            type: Sequelize.STRING, // Campo per il nome dell'organizzatore
+        },
+        participants: {
+            type: Sequelize.JSON, // Campo per la lista di partecipanti
+        },
+        contactInfo: {
+            type: Sequelize.STRING, // Campo per le informazioni di contatto
         },
         imageUrl: {
-            type: Sequelize.STRING,
-        },
-        category: {
-            type: Sequelize.STRING,
+            type: Sequelize.STRING, // Campo per l'URL dell'immagine
         },
         status: {
-            type: Sequelize.STRING,
+            type: Sequelize.STRING, // Campo per lo stato dell'evento
         },
         createdAt: {
             type: Sequelize.DATE,
