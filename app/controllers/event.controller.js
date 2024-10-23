@@ -63,12 +63,12 @@ exports.getEventById = (req, res) => {
 };
 
 exports.getEvents = async (req, res) => {
-    const { type, date } = req.query; // Extract query parameters
+    const { category, date } = req.query; // Extract query parameters
 
     try {
         let whereCondition = {};
-        if (type) {
-            whereCondition.type = type;
+        if (category) {
+            whereCondition.category = category;
         }
         if (date) {
             whereCondition.date = new Date(date);
