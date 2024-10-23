@@ -34,7 +34,7 @@ module.exports = function (app) {
                     Bucket: "rc-italia",
                     Key:
                         "documents/event/" +
-                        entityId +
+                        eventId +
                         "/" +
                         timestamp +
                         "/" +
@@ -56,7 +56,7 @@ module.exports = function (app) {
                     for (let result of results) {
                         // Save document info in eventDocuments instead of userDocuments
                         eventDocuments.create({
-                            entityId: entityId,
+                            eventId: eventId,
                             etag: result?.ETag,
                             location: result?.Location,
                             keyFile: result?.Key,
