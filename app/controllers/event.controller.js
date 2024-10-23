@@ -2,6 +2,7 @@ const db = require("../models");
 const { v4: uuidv4 } = require('uuid');
 
 const Event = db.event;
+const EventDocument = db.eventDocument;
 
 exports.createEvent = async (req, res) => {
     try {
@@ -75,7 +76,13 @@ exports.getEvents = async (req, res) => {
 
         const events = await Event.findAll({
             where: whereCondition,
-            order: [['updatedAt', 'DESC']]
+            order: [['updatedAt', 'DESC']],
+            include: [
+                {
+                    model: db.eventDocument,
+                    as: 'eventDocuments', 
+                }
+            ]
         });
 
         res.status(200).send(events);
