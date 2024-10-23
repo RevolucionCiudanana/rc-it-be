@@ -26,6 +26,7 @@ db.country = require("../models/country.model.js")(sequelize, Sequelize);
 db.sector = require("../models/sector.model.js")(sequelize, Sequelize);
 db.profession = require("../models/profession.model.js")(sequelize, Sequelize);
 db.member = require("../models/member.model.js")(sequelize, Sequelize);
+db.eventDocument = require("./eventDocument.model.js")(sequelize, Sequelize);
 
 UserRoles = sequelize.define("user_roles", {
   userId: Sequelize.STRING,
@@ -48,6 +49,13 @@ db.user.belongsToMany(db.role, {
   otherKey: "roleId",
   through: UserRoles,
   as: "roles",
+});
+
+db.eventDocument.belongsTo(db.event, { foreignKey: "eventId", as: "event" });
+
+db.event.hasMany(db.eventDocument, {
+  foreignKey: "eventId",
+  as: "eventDocuments",
 });
 
 

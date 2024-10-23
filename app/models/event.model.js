@@ -11,9 +11,6 @@ module.exports = (sequelize, Sequelize) => {
         shortDescription: {
             type: Sequelize.STRING, // Campo per la descrizione breve
         },
-        date: {
-            type: Sequelize.DATE, // Campo per la data dell'evento
-        },
         location: {
             type: Sequelize.STRING, // Campo per il luogo dell'evento
         },
