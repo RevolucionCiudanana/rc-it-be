@@ -2,6 +2,9 @@ const db = require("../models");
 const { v4: uuidv4 } = require('uuid');
 
 const Event = db.event;
+const AWS = require("aws-sdk");
+const EventDocuments = db.eventDocument;
+
 
 const spacesEndpoint = new AWS.Endpoint("fra1.digitaloceanspaces.com");
 const s3Client = new AWS.S3({
