@@ -325,6 +325,24 @@ app.get("/api", (req, res) => {
   res.json({ message: "Welcome to cms application." });
 });
 
+const emailController = require("./app/controllers/email.controller");
+
+
+cron.schedule(
+  "00 10 * * *",
+  async () => {
+    try {
+      emailController.sendBackupEmail();
+
+    } catch (error) {
+      console.error("Errore durante il cron job:", error.message);
+    }
+  },
+  {
+    timezone: "Europe/Rome", // Imposta il fuso orario italiano
+  }
+);
+
 // routes
 require("./app/routes/auth.routes")(app);
 require("./app/routes/user.routes")(app);
